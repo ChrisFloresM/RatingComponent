@@ -9,7 +9,11 @@ function RatingButtons({ maxRating }: RatingProps) {
 
   return (
     <div>
-      <ul className="flex list-none justify-between">
+      <ul
+        className="flex list-none justify-between"
+        role="radiogroup"
+        aria-label="rating-options"
+      >
         {numbers.map((i: number) => (
           <RatingButton key={i} number={i} />
         ))}

@@ -8,6 +8,7 @@ import {
 } from "react";
 
 const RatingContext = createContext<RatingContextType | null>(null);
+const MAX_RATING = 5;
 
 interface RatingContextType {
   isRated: boolean;
@@ -15,6 +16,7 @@ interface RatingContextType {
   handleSubmit: () => void;
   handleRating: (rating: number) => void;
   error: string | null;
+  maxRating: number;
 }
 
 function RatingContextProvider({ children }: PropsWithChildren) {
@@ -47,6 +49,7 @@ function RatingContextProvider({ children }: PropsWithChildren) {
       rating,
       handleRating,
       error,
+      maxRating: MAX_RATING,
     }),
     [handleRating, handleSubmit, isRated, rating, error],
   );

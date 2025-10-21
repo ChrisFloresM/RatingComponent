@@ -5,7 +5,7 @@ interface RatingProps {
 }
 
 function RatingButton({ number }: RatingProps) {
-  const { rating, handleRating } = useRating();
+  const { rating, handleRating, maxRating } = useRating();
 
   const backgroundColor = rating === number ? "bg-orange-500" : "bg-grey-900";
   const fontColor = rating === number ? "text-grey-900" : "text-grey-500";
@@ -13,7 +13,14 @@ function RatingButton({ number }: RatingProps) {
 
   return (
     <li>
-      <button onClick={() => handleRating(number)} className={classStyles}>
+      <button
+        aria-label={`Rate ${number} out of ${maxRating}`}
+        role="radio"
+        aria-checked={rating === number}
+        onClick={() => handleRating(number)}
+        className={classStyles}
+        type="button"
+      >
         {number}
       </button>
     </li>

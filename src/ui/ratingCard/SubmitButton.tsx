@@ -8,6 +8,7 @@ function SubmitButton() {
       <button
         onClick={handleSubmit}
         className="preset-5 rounded-full bg-orange-500 py-200 text-black transition-[background-color] duration-200 hover:cursor-pointer hover:bg-white active:bg-white"
+        type="button"
       >
         SUBMIT
       </button>
