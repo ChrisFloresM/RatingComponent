@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+    /*========= Colors =========*/
+    /* Grey */
+    --color-grey-950: #131518;
+    --color-grey-900: #262E38;
+    --color-grey-500: #969FAD;
+
+    /* Orange */
+    --color-orange-500: #FC7614;
+
+    /* Gradient colors */
+    --color-gradient-bottom: #181E27;
+    --color-gradient-top: #232A34;
+
+    /*========= Spacing =========*/
+    --spacing-100: 0.8rem;
+    --spacing-200: 1.6rem;
+    --spacing-300: 2.4rem;
+    --spacing-400: 3.2rem;
+    --spacing-500: 4rem;
+    --spacing-1300: 10.4rem;
+    --spacing-1700: 13.6rem;
+
+    /*========= Typography =========*/
+    --font-overpass: "Overpass", sans-serif;
+
+    --text-preset-1: 2.8rem;
+    --leading-preset-1: 3.5rem;
+
+    --text-preset-2: 2.4rem;
+    --leading-preset-2: 3rem;
+
+    --text-preset-3: 1.6rem;
+    --leading-preset-3: 2.4rem;
+    --tracking-preset-3: 0.02rem;
+
+    --text-preset-4: 1.5rem;
+    --leading-preset-4: 1.9rem;
+    --tracking-preset-4: 0.2rem;
+    --leading-preset-4-regular: 2.4rem;
+
+    --text-preset-5: 1.4rem;
+    --leading-preset-5: 1.8rem;
+    --tracking-preset-5: 0.187rem;
+    --leading-preset-5-semibold: 2.4rem;
+    --tracking-preset-5-semibold: 0.017rem;
+    --leading-preset-5-regular: 2.2rem;
+}
+
+@layer base {
+    html {
+        font-size: 62.5%;
+    }
+
+    body {
+        @apply font-overpass bg-black min-h-dvh flex justify-center items-center px-300;
+    }
+}
+
+.preset-1 {
+    @apply text-preset-1 leading-preset-1 font-bold;
+}
+
+.preset-2 {
+    @apply text-preset-2 leading-preset-2 font-bold;
+}
+
+.preset-3 {
+    @apply text-preset-3 leading-preset-3 tracking-preset-3 font-bold;
+}
+
+.preset-4 {
+    @apply text-preset-4 leading-preset-4 tracking-preset-4 font-bold;
+}
+
+.preset-4-regular {
+    @apply text-preset-4 leading-preset-4-regular tracking-preset-4 font-normal;
+}
+
+.preset-5 {
+    @apply text-preset-5 leading-preset-5 tracking-preset-5 font-bold;
+}
+
+.preset-5-semibold {
+    @apply text-preset-5 leading-preset-5-semibold tracking-preset-5-semibold font-semibold;
+}
+
+.preset-5-regular {
+    @apply text-preset-5 leading-preset-5-regular font-normal;
+}
