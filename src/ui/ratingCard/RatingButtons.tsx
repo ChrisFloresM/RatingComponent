@@ -1,23 +1,18 @@
 import RatingButton from "./RatingButton.tsx";
+import { useRating } from "../../context/RatingContextProvider.tsx";
 
-interface RatingProps {
-  maxRating: number;
-}
-
-function RatingButtons({ maxRating }: RatingProps) {
+function RatingButtons() {
+  const { maxRating } = useRating();
   const numbers: number[] = Array.from({ length: maxRating }, (_, i) => i + 1);
 
   return (
     <div>
-      <ul
-        className="flex list-none justify-between"
-        role="radiogroup"
-        aria-label="rating-options"
-      >
+      <fieldset className="flex list-none justify-between">
+        <legend className="sr-only">Select a rating</legend>
         {numbers.map((i: number) => (
           <RatingButton key={i} number={i} />
         ))}
-      </ul>
+      </fieldset>
     </div>
   );
 }
